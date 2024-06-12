@@ -6,10 +6,10 @@ import (
 
 func Setup() error {
 	db, err := sql.Open("sqlite", "storage.db")
-	defer db.Close()
 	if err != nil {
 		return err
 	}
+	defer db.Close()
 
 	tableSQL := `CREATE TABLE IF NOT EXISTS inventory (
 				product_id INTEGER PRIMARY KEY,

@@ -1,5 +1,5 @@
 package data
 
-func UpdateField(name string, value int) error {
+func UpdateQuantity(name string, value int) error {
 	return nil
 }

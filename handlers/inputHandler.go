@@ -17,7 +17,7 @@ func Input(command string, name string, quantity int) {
 		}
 
 	case "add":
-		err := data.UpdateField(name, quantity)
+		err := data.UpdateQuantity(name, quantity)
 		if err != nil {
 			fmt.Printf("Error adding to %s, with error :%s", name, err.Error())
 		} else {
@@ -25,13 +25,19 @@ func Input(command string, name string, quantity int) {
 		}
 	case "sub":
 		q := quantity * -1
-		err := data.UpdateField(name, q)
+		err := data.UpdateQuantity(name, q)
 		if err != nil {
 			fmt.Printf("Error removing from %s, with error :%s", name, err.Error())
 		} else {
 			fmt.Printf("Successfully removed %d from %s", q, name)
 		}
 	case "delete":
+		err := data.DeleteItem(name)
+		if err != nil {
+			fmt.Printf("Failed to delete item: %s, with error: %s", name, err.Error())
+		} else {
+			fmt.Printf("Successfully product: %s", name)
+		}
 
 	default:
 		fmt.Printf("The command '%s' is not supported.\nPlease enter add, sub, delete, or new", command)

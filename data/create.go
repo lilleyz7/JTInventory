@@ -14,6 +14,8 @@ func CreateField(name string, startingQuant int) error {
 		return err
 	}
 
+	defer stmt.Close()
+
 	_, err = stmt.Exec(name, startingQuant)
 	if err != nil {
 		return err
