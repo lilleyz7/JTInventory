@@ -2,6 +2,8 @@ package data
 
 import (
 	"database/sql"
+
+	_ "github.com/glebarez/go-sqlite"
 )
 
 func Setup() error {

@@ -1,9 +1,7 @@
 package data
 
-import "database/sql"
-
 func DeleteItem(name string) error {
-	db, err := sql.Open("sqlite", "storage.db")
+	db, err := connect()
 	if err != nil {
 		return err
 	}
