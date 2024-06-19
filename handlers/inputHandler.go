@@ -39,6 +39,9 @@ func Input(command string, name string, quantity int) {
 			fmt.Printf("Successfully product: %s", name)
 		}
 
+	case "view":
+		data.ViewData(name)
+
 	default:
 		fmt.Printf("The command '%s' is not supported.\nPlease enter add, sub, delete, or new", command)
 	}
